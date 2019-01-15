@@ -1,0 +1,13 @@
+version: '3'
+services:
+  share-cost-calculator-ui:
+    build: .
+    image: michaeltarleton/share-cost-calculator-ui
+    ports:
+      - 4200:8080
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    driver: bridge
