@@ -1,0 +1,5 @@
+[
+  { "purchaseDate": "2005-01-01", "shares": 100, "price": 10.0 },
+  { "purchaseDate": "2005-02-02", "shares": 40, "price": 12.0 },
+  { "purchaseDate": "2005-03-03", "shares": 50, "price": 11.0 }
+]
