@@ -1,3 +1,19 @@
-<p>
-  share-cost-calculator works!
-</p>
+<form [formGroup]="calculationForm" class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Shares Sold" formControlName="sharesSold" type="number" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Price Per Share" formControlName="sharePrice" type="number" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Sell Date" formControlName="sellDate" type="date" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <select matNativeControl formControlName="costMethod">
+      <option value="lifo">LIFO</option>
+      <option value="fifo">FIFO</option>
+      <option value="highestCost">Highest Cost</option>
+      <option value="lowestCost">Lowest Cost</option>
+    </select>
+  </mat-form-field>
+</form>
