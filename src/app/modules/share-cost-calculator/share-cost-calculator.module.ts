@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ShareCostCalculatorComponent } from './share-cost-calculator.component';
+import { NgModule } from '@angular/core'
+import { SharedModule } from '@app/shared/shared.module'
+import { ShareCostCalculatorRoutingModule } from './share-cost-calculator-routing.module'
+import { ShareCostCalculatorComponent } from './share-cost-calculator.component'
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [ShareCostCalculatorComponent]
+  imports: [SharedModule, ShareCostCalculatorRoutingModule],
+  declarations: [ShareCostCalculatorComponent],
 })
-export class ShareCostCalculatorModule { }
+export class ShareCostCalculatorModule {}

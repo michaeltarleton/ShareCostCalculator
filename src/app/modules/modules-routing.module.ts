@@ -3,9 +3,8 @@ import { RouterModule, Routes } from '@angular/router'
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    loadChildren: './modules/modules.module#ModulesModule',
+    path: 'calculator',
+    loadChildren: './share-cost-calculator/share-cost-calculator.module#ShareCostCalculatorModule',
   },
 ]
 
@@ -13,4 +12,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class ModulesRoutingModule {}

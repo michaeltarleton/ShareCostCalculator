@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { ShareCostCalculatorComponent } from './share-cost-calculator.component'
 
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    loadChildren: './modules/modules.module#ModulesModule',
+    component: ShareCostCalculatorComponent,
   },
 ]
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class ShareCostCalculatorRoutingModule {}

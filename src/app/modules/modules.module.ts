@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core'
 
-import { SharedModule } from '@app/shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module'
+import { ModulesRoutingModule } from './modules-routing.module'
 import { ShareCostCalculatorModule } from './share-cost-calculator/share-cost-calculator.module'
 
 @NgModule({
-  imports: [SharedModule, ShareCostCalculatorModule],
+  imports: [ModulesRoutingModule, SharedModule, ShareCostCalculatorModule],
   declarations: [],
   exports: [],
 })
