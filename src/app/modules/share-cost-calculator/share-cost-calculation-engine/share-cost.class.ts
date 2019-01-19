@@ -26,25 +26,25 @@ abstract class BaseShareCost implements IShareCost {
 }
 
 export class LIFOShareCost extends BaseShareCost {
-  constructor(sharesSold: number, sharePrice: number, sellDate: string | Date, costMethod: ShareCostTypes) {
-    super(sharesSold, sharePrice, sellDate, costMethod)
+  constructor(sharesSold: number, sharePrice: number, sellDate: string | Date) {
+    super(sharesSold, sharePrice, sellDate, ShareCostTypes.LIFO)
   }
 }
 
 export class FIFOShareCost extends BaseShareCost {
-  constructor(sharesSold: number, sharePrice: number, sellDate: string | Date, costMethod: ShareCostTypes) {
-    super(sharesSold, sharePrice, sellDate, costMethod)
+  constructor(sharesSold: number, sharePrice: number, sellDate: string | Date) {
+    super(sharesSold, sharePrice, sellDate, ShareCostTypes.FIFO)
   }
 }
 
 export class HighestCosthareCost extends BaseShareCost {
-  constructor(sharesSold: number, sharePrice: number, sellDate: string | Date, costMethod: ShareCostTypes) {
-    super(sharesSold, sharePrice, sellDate, costMethod)
+  constructor(sharesSold: number, sharePrice: number, sellDate: string | Date) {
+    super(sharesSold, sharePrice, sellDate, ShareCostTypes.HighestCost)
   }
 }
 
 export class LowestCostShareCost extends BaseShareCost {
-  constructor(sharesSold: number, sharePrice: number, sellDate: string | Date, costMethod: ShareCostTypes) {
-    super(sharesSold, sharePrice, sellDate, costMethod)
+  constructor(sharesSold: number, sharePrice: number, sellDate: string | Date) {
+    super(sharesSold, sharePrice, sellDate, ShareCostTypes.LowestCost)
   }
 }

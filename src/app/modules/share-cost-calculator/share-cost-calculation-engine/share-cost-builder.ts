@@ -10,15 +10,15 @@ export class ShareCostBuilder {
   ): IShareCost {
     switch (costMethod) {
       case ShareCostTypes.FIFO:
-        return new FIFOShareCost(sharesSold, sharePrice, sellDate, costMethod)
+        return new FIFOShareCost(sharesSold, sharePrice, sellDate)
       case ShareCostTypes.LIFO:
-        return new LIFOShareCost(sharesSold, sharePrice, sellDate, costMethod)
+        return new LIFOShareCost(sharesSold, sharePrice, sellDate)
       case ShareCostTypes.HighestCost:
-        return new HighestCosthareCost(sharesSold, sharePrice, sellDate, costMethod)
+        return new HighestCosthareCost(sharesSold, sharePrice, sellDate)
       case ShareCostTypes.LowestCost:
-        return new LowestCostShareCost(sharesSold, sharePrice, sellDate, costMethod)
+        return new LowestCostShareCost(sharesSold, sharePrice, sellDate)
       default:
-        return new FIFOShareCost(sharesSold, sharePrice, sellDate, costMethod)
+        return new FIFOShareCost(sharesSold, sharePrice, sellDate)
     }
   }
 }
