@@ -1,0 +1,17 @@
+[
+  {
+    "purchasedDate": "01/01/2005",
+    "sharesPurchased": 100,
+    "purchasePrice": 10
+  },
+  {
+    "purchasedDate": "02/02/2005",
+    "sharesPurchased": 40,
+    "purchasePrice": 12
+  },
+  {
+    "purchasedDate": "03/03/2005",
+    "sharesPurchased": 50,
+    "purchasePrice": 11
+  }
+]
