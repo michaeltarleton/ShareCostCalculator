@@ -13,11 +13,13 @@
       <option *ngFor="let shareCostType of shareCostTypes" [value]="shareCostType">{{ shareCostType }}</option>
     </select>
   </mat-form-field>
+  <button (click)="handleClick(calculationForm)">Click me</button>
 </form>
 
 <app-share-cost-display
-  [sharesSold]="sharesSold"
-  [sharePrice]="sharePrice"
-  [sellDate]="sellDate"
-  [costMethod]="costMethod"
+  [sharesSold]="calculationForm.value.sharesSold"
+  [sharePrice]="calculationForm.value.sharePrice"
+  [sellDate]="calculationForm.value.sellDate"
+  [costMethod]="calculationForm.value.costMethod"
+  [valid]="calculationForm.valid"
 ></app-share-cost-display>
