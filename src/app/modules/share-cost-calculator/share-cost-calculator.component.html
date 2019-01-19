@@ -10,10 +10,7 @@
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <select matNativeControl formControlName="costMethod">
-      <option value="lifo">LIFO</option>
-      <option value="fifo">FIFO</option>
-      <option value="highestCost">Highest Cost</option>
-      <option value="lowestCost">Lowest Cost</option>
+      <option *ngFor="let shareCostType of shareCostTypes" [value]="shareCostType">{{ shareCostType }}</option>
     </select>
   </mat-form-field>
 </form>
