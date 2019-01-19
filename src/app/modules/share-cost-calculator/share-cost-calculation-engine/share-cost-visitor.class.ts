@@ -1,11 +1,23 @@
 // tslint:disable:max-classes-per-file
 
+import { ShareRecord } from '@app/core/services/cost-data/cost-data-share-record.interface'
 import { FIFOShareCost, HighestCosthareCost, LIFOShareCost, LowestCostShareCost } from './share-cost.class'
 
 export interface IShareCostVisitor {
   visit: (shareCost: LIFOShareCost | FIFOShareCost | HighestCosthareCost | LowestCostShareCost) => number
 }
-export class ShareCostVisitor implements IShareCostVisitor {
+
+export abstract class BaseShareCostVisitor {
+  protected shareRecords: ReadonlyArray<ShareRecord>
+  constructor(shareRecords: ReadonlyArray<ShareRecord>) {
+    this.shareRecords = shareRecords
+  }
+}
+
+export class ShareCostVisitor extends BaseShareCostVisitor implements IShareCostVisitor {
+  constructor(shareRecords: ReadonlyArray<ShareRecord>) {
+    super(shareRecords)
+  }
   visit(shareCost: LIFOShareCost | FIFOShareCost | HighestCosthareCost | LowestCostShareCost): number {
     switch (typeof shareCost) {
       case typeof LIFOShareCost:
@@ -22,7 +34,10 @@ export class ShareCostVisitor implements IShareCostVisitor {
   }
 }
 
-export class ShareGainLossVisitor implements IShareCostVisitor {
+export class ShareGainLossVisitor extends BaseShareCostVisitor implements IShareCostVisitor {
+  constructor(shareRecords: ReadonlyArray<ShareRecord>) {
+    super(shareRecords)
+  }
   visit(shareCost: LIFOShareCost | FIFOShareCost | HighestCosthareCost | LowestCostShareCost): number {
     switch (typeof shareCost) {
       case typeof LIFOShareCost:
@@ -39,7 +54,10 @@ export class ShareGainLossVisitor implements IShareCostVisitor {
   }
 }
 
-export class RemaininSharesVisitor implements IShareCostVisitor {
+export class RemaininSharesVisitor extends BaseShareCostVisitor implements IShareCostVisitor {
+  constructor(shareRecords: ReadonlyArray<ShareRecord>) {
+    super(shareRecords)
+  }
   visit(shareCost: LIFOShareCost | FIFOShareCost | HighestCosthareCost | LowestCostShareCost): number {
     switch (typeof shareCost) {
       case typeof LIFOShareCost:
@@ -56,7 +74,10 @@ export class RemaininSharesVisitor implements IShareCostVisitor {
   }
 }
 
-export class RemainingShareCostPriceVisitor implements IShareCostVisitor {
+export class RemainingShareCostPriceVisitor extends BaseShareCostVisitor implements IShareCostVisitor {
+  constructor(shareRecords: ReadonlyArray<ShareRecord>) {
+    super(shareRecords)
+  }
   visit(shareCost: LIFOShareCost | FIFOShareCost | HighestCosthareCost | LowestCostShareCost): number {
     switch (typeof shareCost) {
       case typeof LIFOShareCost:
