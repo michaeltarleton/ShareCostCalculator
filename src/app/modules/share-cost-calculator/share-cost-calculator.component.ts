@@ -1,7 +1,7 @@
 import { Component, OnChanges, SimpleChanges } from '@angular/core'
-import { FormBuilder, Validators, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import moment from 'moment'
-import { ShareCostTypes } from './share-cost-calculation-engine/share-cost.interface'
+import { ShareCostTypes } from './share-cost-calculation-engine/share-cost.enum'
 
 @Component({
   selector: 'app-share-cost-calculator',

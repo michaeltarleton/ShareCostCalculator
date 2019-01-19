@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core'
+import { ShareCostBuilder } from '../share-cost-calculation-engine/share-cost-builder'
 import {
   RemainingShareCostPriceVisitor,
   RemaininSharesVisitor,
-  ShareCostBuilder,
-  ShareCostTypes,
   ShareCostVisitor,
   ShareGainLossVisitor,
-} from '../share-cost-calculation-engine/share-cost.interface'
+} from '../share-cost-calculation-engine/share-cost-visitor.class'
+import { ShareCostTypes } from '../share-cost-calculation-engine/share-cost.enum'
 
 @Component({
   selector: 'app-share-cost-display',
