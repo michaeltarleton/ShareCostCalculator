@@ -11,23 +11,23 @@ describe('ShareCostVisitor', () => {
     })
   }))
 
-  describe('LIFO', () => {
+  describe('FIFO', () => {
     it('should return 0', () => {
-      const shareCost = new LIFOShareCost(0, 0, new Date())
       const sut = new ShareCostVisitor(SHARE_RECORDS)
+      const fifoShareCost = new FIFOShareCost(0, 0, new Date())
 
-      const result = sut.visit(shareCost)
+      const result = sut.visit(fifoShareCost)
 
-      expect(result).toBe(0)
+      expect(result).toBeCloseTo(10.333)
     })
   })
 
-  describe('FIFO', () => {
+  describe('LIFO', () => {
     it('should return 0', () => {
-      const shareCost = new FIFOShareCost(0, 0, new Date())
+      const lifoShareCost = new LIFOShareCost(0, 0, new Date())
       const sut = new ShareCostVisitor(SHARE_RECORDS)
 
-      const result = sut.visit(shareCost)
+      const result = sut.visit(lifoShareCost)
 
       expect(result).toBe(0)
     })
@@ -35,10 +35,10 @@ describe('ShareCostVisitor', () => {
 
   describe('HighestCost', () => {
     it('should return 0', () => {
-      const shareCost = new HighestCosthareCost(0, 0, new Date())
+      const highestCostshareCost = new HighestCosthareCost(0, 0, new Date())
       const sut = new ShareCostVisitor(SHARE_RECORDS)
 
-      const result = sut.visit(shareCost)
+      const result = sut.visit(highestCostshareCost)
 
       expect(result).toBe(0)
     })
@@ -46,10 +46,10 @@ describe('ShareCostVisitor', () => {
 
   describe('LowestCost', () => {
     it('should return 0', () => {
-      const shareCost = new LowestCostShareCost(0, 0, new Date())
+      const lowestCostShareCost = new LowestCostShareCost(0, 0, new Date())
       const sut = new ShareCostVisitor(SHARE_RECORDS)
 
-      const result = sut.visit(shareCost)
+      const result = sut.visit(lowestCostShareCost)
 
       expect(result).toBe(0)
     })
